@@ -13,3 +13,9 @@ def product():
         return SampleProduct("https://www.sample.com")
     else:
         raise ValueError(f"Unexpected product configured {os.getenv('TARGET_PRODUCT')}")
+
+
+@pytest.fixture(scope="session")
+def create_admin(product):
+    return product.create_new_admin_user_session()
+    

@@ -3,9 +3,21 @@ from abc import ABC, abstractmethod
 
 class CommonProtocol(ABC):
     @abstractmethod
-    def get_data(self, *args, **kwargs):
+    def create_user_session(self, *args, **kwargs):
         pass
 
     @abstractmethod
-    def create_record(self, data):
+    def get_resources(self, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def reserve_resource(self, resource_id, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def free_resource(self, resource_id, *args, **kwargs):
+        pass
+
+    @abstractmethod
+    def create_new_admin_user_session(self, *args, **kwargs):
         pass
