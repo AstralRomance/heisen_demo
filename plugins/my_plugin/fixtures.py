@@ -68,5 +68,6 @@ def create_reservation(product, admin_user):
     return factory
 
 @pytest.fixture()
-def release_resources():
+def release_resources(product):
     pass
+    # Implement your cleanup here
