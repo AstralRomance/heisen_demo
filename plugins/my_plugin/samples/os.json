@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Ubuntu Server",
+        "kernel_version": "5.4.0-42-generic",
+        "os_version": "20.04 LTS",
+        "type": "server"
+    },
+    {
+        "name": "CentOS",
+        "kernel_version": "7.9.2009",
+        "os_version": "7",
+        "type": "server"
+    },
+    {
+        "name": "Debian",
+        "kernel_version": "4.19.208-1",
+        "os_version": "10.10",
+        "type": "server"
+    },
+    {
+        "name": "Fedora Workstation",
+        "kernel_version": "5.13.12-300.fc34.x86_64",
+        "os_version": "34",
+        "type": "desktop"
+    },
+    {
+        "name": "openSUSE Leap",
+        "kernel_version": "5.3.18-59.16-default",
+        "os_version": "15.3",
+        "type": "server"
+    },
+    {
+        "name": "Arch Linux",
+        "kernel_version": "5.14.7-arch1-1",
+        "os_version": "",
+        "type": "desktop"
+    },
+    {
+        "name": "Linux Mint",
+        "kernel_version": "5.4.0-74-generic",
+        "os_version": "20.2",
+        "type": "desktop"
+    },
+    {
+        "name": "RHEL (Red Hat Enterprise Linux)",
+        "kernel_version": "4.18.0-240.el8.x86_64",
+        "os_version": "",
+        "type": "server"
+    },
+    {
+        "name": "Manjaro Linux",
+        "kernel_version": "",
+        "os_version": "",
+        "type": "desktop"
+    },
+    {
+        "name": "Alpine Linux",
+        "kernel_version": "",
+        "os_version": "",
+        "type": ""
+    }
+]

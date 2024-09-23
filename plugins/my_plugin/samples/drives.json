@@ -1,0 +1,82 @@
+[
+    {
+        "available": 30,
+        "capacity_gb": 500,
+        "form_factor": "M.2",
+        "interface": "NVMe",
+        "model": "Samsung 970 EVO Plus",
+        "type": "SSD"
+    },
+    {
+        "available": 60,
+        "capacity_gb": 1000,
+        "form_factor": "3.5",
+        "interface": "SATA",
+        "model": "Western Digital Blue",
+        "type": "HDD"
+    },
+    {
+        "available": 70,
+        "capacity_gb": 250,
+        "form_factor": "2.5",
+        "interface": "SATA",
+        "model": "Crucial MX500",
+        "type": "SSD"
+    },
+    {
+        "available": 70,
+        "capacity_gb": 2000,
+        "form_factor": "3.5",
+        "interface": "SATA",
+        "model": "Seagate Barracuda",
+        "type": "HDD"
+    },
+    {
+        "available": 60,
+        "capacity_gb": 1,
+        "form_factor": "M.2",
+        "interface": "NVMe",
+        "model": "Kingston A2000",
+        "type": "SSD"
+    },
+    {
+        "available": 60,
+        "capacity_gb": 4000,
+        "form_factor": "3.5",
+        "interface": "SATA",
+        "model": "Toshiba X300",
+        "type": "HDD"
+    },
+    {
+        "available": 50,
+        "capacity_gb": 1,
+        "form_factor": "M.2",
+        "interface": "NVMe",
+        "model": "ADATA XPG SX8200 Pro",
+        "type": "SSD"
+    },
+    {
+        "available": 60,
+        "capacity_gb": 3000,
+        "form_factor": "3.5",
+        "interface": "SATA",
+        "model": "Hitachi Deskstar",
+        "type": "HDD"
+    },
+    {
+        "available": 30,
+        "capacity_gb": 500,
+        "form_factor": "2.5",
+        "interface": "SATA",
+        "model": "SanDisk Ultra 3D",
+        "type": "SSD"
+    },
+    {
+        "available": 30,
+        "capacity_gb": 8000,
+        "form_factor": "3.5",
+        "interface": "SATA",
+        "model": "Seagate IronWolf",
+        "type": "HDD"
+    }
+]

@@ -3,7 +3,7 @@ from abc import ABC, abstractmethod
 
 class CommonProtocol(ABC):
     @abstractmethod
-    def create_user_session(self, *args, **kwargs):
+    def create_new_admin_user_session(self, *args, **kwargs):
         pass
 
     @abstractmethod
@@ -15,7 +15,7 @@ class CommonProtocol(ABC):
         pass
 
     @abstractmethod
-    def free_resource(self, resource_id, *args, **kwargs):
+    def release_resource(self, resource_id, *args, **kwargs):
         pass
 
     @abstractmethod

@@ -1,0 +1,82 @@
+[
+    {
+        "model": "Dell PowerEdge R740",
+        "disk_count": 6,
+        "manufacturer": "Dell",
+        "cpu_model": "Intel Xeon Gold 5218",
+        "ram_size_gb": 64,
+        "available": true
+    },
+    {
+        "model": "HP ProLiant DL380 Gen10",
+        "disk_count": 6,
+        "manufacturer": "HP",
+        "cpu_model": "Intel Xeon Silver 4110",
+        "ram_size_gb": 32,
+        "available": true
+    },
+    {
+        "model": "Lenovo ThinkSystem SR650",
+        "disk_count": 4,
+        "manufacturer": "Lenovo",
+        "cpu_model": "Intel Xeon Gold 6248",
+        "ram_size_gb": 128,
+        "available": true
+    },
+    {
+        "model": "Cisco UCS C220 M5",
+        "disk_count": 7,
+        "manufacturer": "Cisco",
+        "cpu_model": "Intel Xeon Gold 6130",
+        "ram_size_gb": 256,
+        "available": true
+    },
+    {
+        "model": "Supermicro X11SPA-T",
+        "disk_count": 5,
+        "manufacturer": "Supermicro",
+        "cpu_model": "Intel Xeon W-2295",
+        "ram_size_gb": 128,
+        "available": true
+    },
+    {
+        "model": "Fujitsu PRIMERGY RX2540 M4",
+        "disk_count": 7,
+        "manufacturer": "Fujitsu",
+        "cpu_model": "Intel Xeon Silver 4210",
+        "ram_size_gb": 64,
+        "available": true
+    },
+    {
+        "model": "ASUS RS720Q-E9-RS24",
+        "disk_count": 3,
+        "manufacturer": "ASUS",
+        "cpu_model": "Intel Xeon Scalable",
+        "ram_size_gb": 32,
+        "available": true
+    },
+    {
+        "model": "Tyan Transport SX TN70B-B8036",
+        "disk_count": 8,
+        "manufacturer": "Tyan",
+        "cpu_model": "AMD EPYC 7402P",
+        "ram_size_gb": 256,
+        "available": true
+    },
+    {
+        "model": "Gigabyte R281-3C0",
+        "disk_count": 9,
+        "manufacturer": "Gigabyte",
+        "cpu_model": "AMD EPYC 7742",
+        "ram_size_gb": 512,
+        "available": true
+    },
+    {
+        "model": "Oracle Server X8-2",
+        "disk_count": 4,
+        "manufacturer": "Oracle",
+        "cpu_model": "Intel Xeon Gold 6244",
+        "ram_size_gb": 128,
+        "available": true
+    }
+]
