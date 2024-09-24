@@ -62,11 +62,15 @@ def create_reservation(product, admin_user, release_resources):
             resource_config=reservation_config,
             user_data=admin_user,
         ).json()
-        if os.getenv("TARGET_PRODUCT") == "sample":
-            print("add os installation call for sample product")
         product.wait_deploy(
             reservation_data["reservation_id"], reservation_data["reserver_id"]
         )
+        if os.getenv("TARGET_PRODUCT") == "sample":
+            product.install_os(
+                reservation_config,
+                reservation_data["reservation_id"],
+                product.get_available_os(filter={"name": "CentOS"}),
+            )
         return reservation_data
 
     return factory
@@ -79,4 +83,8 @@ def release_resources(product, admin_user):
         admin_user["user_id"]
     )
     for reservation in active_user_reservations:
-        product.release_resource(reservation)
+        product.release_resource(reservation, user_data=admin_user)
+
+
+def pytest_runtest_teardown(item):
+    print(f"pytest runtest teardown from plugin scope {os.getenv('TARGET_PRODUCT')}")
