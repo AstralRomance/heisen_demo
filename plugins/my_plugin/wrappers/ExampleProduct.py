@@ -60,18 +60,14 @@ class ExampleProduct(CommonProtocol):
                 },
             )
             return requests.get(f"{self.service_url}/resources").json()
-        
+
     def get_resource_status(self, resource_model, *args, **kwargs):
         with requests_mock.Mocker() as mock_request:
             mock_request.get(
                 f"{self.service_url}/resource/{resource_model}",
-                json={
-                    "resource": resource_model,
-                    "is_reserved": True
-                },
+                json={"resource": resource_model, "is_reserved": True},
             )
-            return requests.get(f"{self.service_url}/resources").json()
-
+            return requests.get(f"{self.service_url}/resource/{resource_model}").json()
 
     def reserve_resource(self, resource_config, user_data, *args, **kwargs):
         with requests_mock.Mocker() as mock_request:
@@ -86,10 +82,25 @@ class ExampleProduct(CommonProtocol):
                 f"{self.service_url}/reserve/{resource_config['server']['model']}"
             )
 
-    def release_resource(self, resource_id, *args, **kwargs):
+    def get_active_user_reservations(self, user_id):
         with requests_mock.Mocker() as mock_request:
-            mock_request.post(f"{self.service_url}/release/{resource_id}", json={})
-            return requests.post(f"{self.service_url}/release/{resource_id}")
+            mock_request.delete(
+                f"{self.service_url}/reservations/user/{user_id}",
+                json={
+                    "active_reservations": [
+                        str(uuid4()) for _ in range(random.randint(1, 3))
+                    ]
+                },
+            )
+            return requests.delete(f"{self.service_url}/reservations/user/{user_id}").json()
+
+    def release_resource(self, reservation_id, *args, **kwargs):
+        with requests_mock.Mocker() as mock_request:
+            mock_request.delete(
+                f"{self.service_url}/release/{reservation_id}",
+                json={"released": reservation_id},
+            )
+            return requests.delete(f"{self.service_url}/release/{reservation_id}")
 
     def wait_deploy(self, reservation_id, reserver_id):
         with requests_mock.Mocker() as mock_request:
@@ -102,9 +113,9 @@ class ExampleProduct(CommonProtocol):
             ).json()
             while not response["reservation_status"]:
                 mock_request.get(
-                f"{self.service_url}/deploy/{reservation_id}/{reserver_id}",
-                json={"reservation_status": random.randint(0, 1)},
-            )
+                    f"{self.service_url}/deploy/{reservation_id}/{reserver_id}",
+                    json={"reservation_status": random.randint(0, 1)},
+                )
                 response = requests.get(
                     f"{self.service_url}/deploy/{reservation_id}/{reserver_id}"
                 ).json()

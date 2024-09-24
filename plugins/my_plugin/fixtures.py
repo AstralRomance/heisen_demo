@@ -43,18 +43,20 @@ def create_reservation_config(product, admin_user):
                 [
                     drive_type
                     for drive_type in available_resources["drives"]
-                    if (drive_type["available"] >= required_drives) and (drive_type["type"] == drives_type)
+                    if (drive_type["available"] >= required_drives)
+                    and (drive_type["type"] == drives_type)
                 ]
             )
         except IndexError:
             pytest.skip(f"Not enough drives for {required_drives=}")
 
-        return {"server": target_server, "drives": prepared_drives}, reservation_data        
+        return {"server": target_server, "drives": prepared_drives}
 
     return factory
 
+
 @pytest.fixture()
-def create_reservation(product, admin_user):
+def create_reservation(product, admin_user, release_resources):
     def factory(reservation_config):
         reservation_data = product.reserve_resource(
             resource_config=reservation_config,
@@ -62,12 +64,18 @@ def create_reservation(product, admin_user):
         ).json()
         if os.getenv("TARGET_PRODUCT") == "sample":
             print("add os installation call for sample product")
-        product.wait_deploy(reservation_data["reservation_id"], reservation_data["reserver_id"])
+        product.wait_deploy(
+            reservation_data["reservation_id"], reservation_data["reserver_id"]
+        )
         return reservation_data
-    
+
     return factory
 
+
 @pytest.fixture()
-def release_resources(product):
-    pass
-    # Implement your cleanup here
+def release_resources(product, admin_user):
+    active_user_reservations = product.get_active_user_reservations(
+        admin_user["user_id"]
+    )
+    for reservation in active_user_reservations:
+        product.release_resource(reservation)
