@@ -74,6 +74,7 @@ def create_reservation(product, admin_user, release_resources):
 
 @pytest.fixture()
 def release_resources(product, admin_user):
+    yield
     active_user_reservations = product.get_active_user_reservations(
         admin_user["user_id"]
     )

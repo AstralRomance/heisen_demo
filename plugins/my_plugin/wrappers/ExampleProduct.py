@@ -92,7 +92,9 @@ class ExampleProduct(CommonProtocol):
                     ]
                 },
             )
-            return requests.delete(f"{self.service_url}/reservations/user/{user_id}").json()
+            return requests.delete(
+                f"{self.service_url}/reservations/user/{user_id}"
+            ).json()
 
     def release_resource(self, reservation_id, *args, **kwargs):
         with requests_mock.Mocker() as mock_request:
