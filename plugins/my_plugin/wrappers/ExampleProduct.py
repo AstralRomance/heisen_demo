@@ -82,7 +82,7 @@ class ExampleProduct(CommonProtocol):
                 f"{self.service_url}/reserve/{resource_config['server']['model']}"
             )
 
-    def get_active_user_reservations(self, user_id):
+    def get_active_user_reservations(self, user_id, *args, **kwargs):
         with requests_mock.Mocker() as mock_request:
             mock_request.delete(
                 f"{self.service_url}/reservations/user/{user_id}",
@@ -104,7 +104,7 @@ class ExampleProduct(CommonProtocol):
             )
             return requests.delete(f"{self.service_url}/release/{reservation_id}")
 
-    def wait_deploy(self, reservation_id, reserver_id):
+    def wait_deploy(self, reservation_id, reserver_id, *args, **kwargs):
         with requests_mock.Mocker() as mock_request:
             mock_request.get(
                 f"{self.service_url}/deploy/{reservation_id}/{reserver_id}",
