@@ -2,7 +2,7 @@
 Demo repo for Heisenbug conf.
 This is sample project for demonstrate some pytest plugins possibilities.
 
-## Testting object
+## Testing object
 There is two products: "Sample" and "Example" products which provides access to some resources like servers, drives etc and some specific functions like OS installation. Counts that all operations performed using REST API, and it's mocked via requests_mock library.
 
 # Setup:
