@@ -33,4 +33,4 @@ def test_reservation_create_compable_asserts(
     StateAssertions.assert_resource_reserved(
         product.get_resource_status(reservation_config["server"]["model"])
     )
-    assert_resource_reserved(reservation_config["server"]["model"])
+    assert_resource_reserved(product.get_resource_status(reservation_config["server"]["model"]))

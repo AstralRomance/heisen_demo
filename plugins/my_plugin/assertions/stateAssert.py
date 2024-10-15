@@ -5,7 +5,7 @@ class StateAssertions:
     PRODUCTS_ASSERTIONS_MAPPING = {
         "resource_state": {
             "sample": "sample_resource_reserved",
-            "example": "exmaple_resource_reserved",
+            "example": "example_resource_reserved",
         }
     }
 
@@ -25,5 +25,5 @@ class StateAssertions:
         assert reservation_data["os_installation"] == "complete"
 
     @classmethod
-    def exmaple_resource_reserved(cls, reservation_data):
+    def example_resource_reserved(cls, reservation_data):
         assert reservation_data["is_reserved"]
