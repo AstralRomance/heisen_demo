@@ -9,7 +9,7 @@ class CommonProtocol(ABC):
     @abstractmethod
     def get_resources(self, *args, **kwargs):
         pass
-    
+
     @abstractmethod
     def reserve_resource(self, resource_config, user_data, *args, **kwargs):
         pass
